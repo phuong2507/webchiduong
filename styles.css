@@ -1,0 +1,138 @@
+body { 
+    margin: 0; 
+    padding: 0; 
+    font-family: Arial, sans-serif; 
+    overflow-x: hidden;
+}
+
+.info-menu {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.menu-btn {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.menu-btn:hover, .menu-btn:focus {
+    background: #0056b3;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 220px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    top: 40px;
+    left: 0;
+    z-index: 1001;
+}
+
+.info-menu[aria-expanded="true"] .dropdown-content {
+    display: block;
+}
+
+.dropdown-content div {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dropdown-content div:hover {
+    background: #f8f9fa;
+}
+
+header {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    z-index: 999;
+    background: #f8f9fa;
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 90%;
+}
+
+h1 {
+    margin: 0;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+#search { 
+    padding: 8px;
+    width: 180px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+}
+
+button {
+    padding: 8px 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#svg-container {
+    width: 100vw; 
+    height: 100vh;
+    padding-top: 80px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.highlight {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { fill: #ff0000; }
+    50% { fill: #ffcccc; }
+    100% { fill: #ff0000; }
+}
+
+.feedback {
+    display: none;
+    color: #d9534f;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.feedback.success {
+    color: #5cb85c;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        top: 60px;
+        width: 90%;
+        justify-content: center;
+    }
+    
+    #svg-container {
+        padding-top: 120px;
+    }
+}
